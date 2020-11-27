@@ -1,0 +1,22 @@
+// Colors
+$ebonyClay :#22313F;
+$wildSand :#F6F6F6;
+$silverChalice :#A3A3A3;
+$aquaForest :#5DAC6E;
+
+$color-background: $ebonyClay;
+$color-text: $ebonyClay;
+$color-light-text: $wildSand;
+$color-grey-text: $silverChalice;
+$color-green-price: $aquaForest;
+
+// Fonts
+$font-body: "Roboto", sans-serif;
+
+// Breakpoints
+$breakpoint-small-phone: 375px;
+$breakpoint-phone: 667px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-ls: 1024px;
+$breakpoint-desktop: 1280px;
+$breakpoint-laptop: 1440px;

@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <todo-header></todo-header>
+    <todo-search></todo-search>
+    <todo-table></todo-table>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoTable from "@/components/TableModal.vue";
+import TodoSearch from "@/components/SearchModal.vue";
+import TodoHeader from "@/components/SearchModal.vue";
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TodoTable,
+    TodoSearch,
+    TodoHeader,
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
 </style>
