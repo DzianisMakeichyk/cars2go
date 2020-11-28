@@ -1,11 +1,24 @@
 <template>
-  <p>Hello Header modal</p>
+  <header>
+    <h1>{{ title }}</h1>
+
+
+    <button @click="$emit('handle-modal-active', true)">
+      Add
+    </button>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "TodoHeaderModal",
-}
+  name: "HeaderModal",
+  props: {
+    title: {
+      type: String,
+      default: "Cars2go"
+    }
+  },
+};
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
