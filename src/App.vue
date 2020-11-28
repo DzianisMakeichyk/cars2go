@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import TableModal from "@/components/TableModal.vue";
-import SearchModal from "@/components/SearchModal.vue";
-import HeaderModal from "@/components/HeaderModal.vue";
+import TableModal from "@/components/TableModal";
+import SearchModal from "@/components/SearchModal";
+import HeaderModal from "@/components/HeaderModal";
 import AddModal from "@/components/AddModal";
 
 export default {

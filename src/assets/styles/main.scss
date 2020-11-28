@@ -17,3 +17,37 @@ h2,
 h3 {
   font-weight: normal;
 }
+
+.button__primary {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid $ebonyClay;
+  color: $ebonyClay;
+  font-size: 14px;
+  line-height: 1;
+  padding: 12px 45px;
+  background: #fff;
+  transition: background 0.2s linear, color 0.2s linear;
+
+  &:hover {
+    background: $ebonyClay;
+    color: #fff;
+  }
+}
+
+.button__secondary {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid $ebonyClay;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  padding: 12px 45px;
+  background: $ebonyClay;
+  transition: background 0.2s linear, color 0.2s linear;
+
+  &:hover {
+    background: #fff;
+    color: $ebonyClay;
+  }
+}
