@@ -54,9 +54,17 @@ export default {
       // get the highest number id to iterate on it
       const highestId = Math.max.apply(Math, this.items.map(item => item.id));
 
+      const { title, imageUrl, price, persons, doors, litres, description } = item;
+
       this.items.push({
         id: highestId + 1,
-        title: item.title,
+        title,
+        imageUrl,
+        price,
+        persons,
+        doors,
+        litres,
+        description,
       });
 
       this.saveLocalStorageitems();

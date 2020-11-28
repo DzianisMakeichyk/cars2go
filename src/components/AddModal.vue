@@ -20,7 +20,7 @@
         label="Price"
         @blur="$v.form.price.$touch()"
         errorMessage="Price is required"
-        errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+        errorTypeMessage="The field must contain numbers"
         placeholder="Price"
         required
         type="text"
@@ -32,7 +32,7 @@
         label="Image Url"
         @blur="$v.form.imageUrl.$touch()"
         errorMessage="Image Url is required"
-        errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+        errorTypeMessage="The field must contain url"
         placeholder="Image Url"
         type="text"
         v-model="form.imageUrl"
@@ -44,7 +44,7 @@
           label="Persons"
           @blur="$v.form.persons.$touch()"
           errorMessage="Persons is required"
-          errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+          errorTypeMessage="The field must contain numbers"
           placeholder="Persons"
           required
           type="text"
@@ -56,7 +56,7 @@
           label="Doors"
           @blur="$v.form.doors.$touch()"
           errorMessage="Doors is required"
-          errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+          errorTypeMessage="The field must contain numbers beetwen 2 and 8"
           placeholder="Doors"
           required
           type="text"
@@ -68,7 +68,7 @@
           label="Litres per 100 km"
           @blur="$v.form.litres.$touch()"
           errorMessage="Litres per 100 km is required"
-          errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+          errorTypeMessage="The field must contain numbers"
           placeholder="Litres per 100 km"
           required
           type="text"
@@ -83,7 +83,6 @@
           errorMessage="Description is required"
           errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
           placeholder="Description"
-          required
           type="textarea"
           v-model="form.description"
         />
@@ -101,7 +100,7 @@
 </template>
 
 <script>
-import { required, minLength, maxLength, between } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, between, alphaNum } from 'vuelidate/lib/validators'
 
 import AppInput from '@/components/AppInput'
 
@@ -132,30 +131,30 @@ export default {
         maxLength: maxLength(60)
       },
       imageUrl: {
-        minLength: minLength(3),
-        maxLength: maxLength(60)
+        required,
       },
       price: {
         required,
+        alphaNum,
         alpha: value => !value.match(/[^0-9 ]/),
       },
       persons: {
         required,
+        alphaNum,
         alpha: value => !value.match(/[^0-9 ]/),
       },
       doors: {
         required,
+        alphaNum,
         between: between(2, 8)
       },
       litres: {
         required,
+        alphaNum,
         alpha: value => !value.match(/[^0-9 ]/),
       },
       description: {
-        required,
-        alpha: value => !value.match(/[^a-zA-Z- ]/),
-        minLength: minLength(40),
-        maxLength: maxLength(160)
+        minLength: minLength(40)
       },
     }
   },

@@ -11,37 +11,39 @@
             <!-- Image -->
             <div class="item__image">
               <div class="item-image__wrapper">
-                <img src="" alt="">
+                <img :src="item.imageUrl" role="presentation">
               </div>
             </div>
             <!-- Description -->
             <div class="item__description">
-              <h2 class="item-description__title">{{ item.title }}</h2>
-              <div class="item-spec">
-                <div class="item-spec__elem">🧍5</div>
-                <div class="item-spec__elem">🚪5</div>
-                <div class="item-spec__elem">🛢️4/100km</div>
-              </div>
+              <div class="item__description__wrapper">
+                <h2 class="item-description__title">{{ item.title }}</h2>
+                <div class="item-spec">
+                  <div class="item-spec__elem">🧍{{ item.persons }}</div>
+                  <div class="item-spec__elem">🚪{{ item.doors }}</div>
+                  <div class="item-spec__elem">🛢️{{ item.litres }}/100km</div>
+                </div>
 
               <div class="item-description">
-                <div class="item-description__offer">
-                  <p class="item-description__sub-title">Description</p>
-                  <p class="item-description__copy">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                  </p>
-                </div>
-                <div class="item-description__toolbar">
-                  <div class="item-toolbar">
-                    <div class="item-toolbar__price">$1888</div>
-                    <div class="item-toolbar__buttons">
-                      <button class="item-toolbar__button--primary">Book Now</button>
-                      
-                      <button
-                        class="item-toolbar__button--secondary"
-                        @click="$emit('delete-item', item.row)"
-                      >
-                        Delete car
-                      </button>
+                  <div class="item-description__offer">
+                    <p class="item-description__sub-title">Description</p>
+                    <p class="item-description__copy">
+                      {{ item.description }}
+                    </p>
+                  </div>
+                  <div class="item-description__toolbar">
+                    <div class="item-toolbar">
+                      <div class="item-toolbar__price">${{ item.price }}</div>
+                      <div class="item-toolbar__buttons">
+                        <button class="item-toolbar__button--primary">Book Now</button>
+                        
+                        <button
+                          class="item-toolbar__button--secondary"
+                          @click="$emit('delete-item', item.row)"
+                        >
+                          Delete car
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -71,8 +73,12 @@ export default {
 
 <style lang="scss" scoped>
   .item {
-    border: 5px solid $wildSand;
+    border: 10px solid $wildSand;
     padding: 30px;
+  }
+
+  .item + .item {
+    border-top: 15px solid $wildSand;
   }
 
   .item__wrapper {
@@ -86,16 +92,25 @@ export default {
   }
 
   .item__image {
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet-ls) {
+      margin-bottom: 30px;
+    }
+
     @media (min-width: $breakpoint-tablet-ls + 1) {
       width: 40%;
     }
   }
 
   .item-image__wrapper {
-    margin: 0 20px 0 0;
     overflow: hidden;
     padding-top: 200 / 340 * 100%;
     position: relative;
+
+    @media (min-width: $breakpoint-tablet-ls + 1) {
+      margin: 0 20px 0 0;
+    }
 
     img {
       height: 100%;
@@ -112,15 +127,27 @@ export default {
     }
   }
 
+  .item__description__wrapper {
+    @media (min-width: $breakpoint-tablet-ls + 1) {
+      margin: 0 0 0 20px;
+    }
+  }
+
   .item-description__title {
-    font-size: 22px;
+    font-size: 32px;
     color: $color-text;
     font-weight: 500;
     padding-bottom: 25px;
+
+    @media (max-width: $breakpoint-tablet-ls) {
+      font-size: 22px;
+    }
   }
 
   .item-description__copy {
     font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
     color: $color-grey-text;
   }
 
@@ -128,7 +155,7 @@ export default {
     font-size: 18px;
     color: $color-text;
     font-weight: 500;
-    padding-bottom: 5px;
+    padding-bottom: 9px;
   }
 
   .item-spec {
