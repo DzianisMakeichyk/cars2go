@@ -33,11 +33,6 @@ export default {
     submitSearch() {
       const { value, items } = this;
       let searchItems = [];
-      // if (!value) {
-      //   return
-      // }
-
-      console.log(items)
 
       const searchValue = this.value.toLowerCase();
 
