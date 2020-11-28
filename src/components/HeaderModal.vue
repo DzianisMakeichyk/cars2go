@@ -1,24 +1,44 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
-
-
-    <button @click="$emit('handle-modal-active', true)">
-      Add
-    </button>
+    <div class="header__wrapper">
+      <h1 class="title">Cars2go</h1>
+      <button class="header__button" @click="$emit('handle-modal-active', true)">
+        Add new car
+      </button>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
   name: "HeaderModal",
-  props: {
-    title: {
-      type: String,
-      default: "Cars2go"
-    }
-  },
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+  header {
+    font-family: $font-body;
+    background: $ebonyClay;
+  }
+
+  .header__wrapper {
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $color-light-text;
+  }
+
+  .header__button {
+    cursor: pointer;
+    color: $color-light-text;
+    font-weight: 300;
+    font-size: 14px;
+  }
+</style>
