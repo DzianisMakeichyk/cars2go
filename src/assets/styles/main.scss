@@ -45,6 +45,7 @@ h3 {
   padding: 12px 45px;
   background: $ebonyClay;
   transition: background 0.2s linear, color 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 
   &:hover {
     background: #fff;

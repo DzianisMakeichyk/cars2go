@@ -15,6 +15,7 @@
         v-model="value"
         :disabled="disabled"
         :id="placeholder.replace(' ', '-')"
+        :name="placeholder.replace(' ', '-')"
       >
 
       <textarea

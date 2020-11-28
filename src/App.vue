@@ -3,7 +3,10 @@
     <header-modal
       @handle-modal-active="handleModalActive"
     ></header-modal>
-    <search-modal></search-modal>
+    <search-modal
+      :items="items"
+      @search-items="searchItems"
+    ></search-modal>
     <table-modal
       :items="items"
       @delete-item="deleteitem"
@@ -41,13 +44,15 @@ export default {
   mounted() {
     if (localStorage.getItem("items")) {
       this.items = JSON.parse(localStorage.getItem("items"));
-    } else {
-      this.items = this.initialitems;
     }
   },
   methods: {
     handleModalActive(state) {
       this.isAddModalActive = state;
+    },
+
+    searchItems(items) {
+      this.items = items;
     },
 
     onAdditem(item) {
