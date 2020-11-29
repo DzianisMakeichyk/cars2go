@@ -128,10 +128,10 @@ export default {
       display: block;
     }
   }
+
   .app-input__content {
     padding-bottom: 25px;
     position: relative;
-
   }
 
   .app-input__errors {

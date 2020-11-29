@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "HeaderModal",
+  name: 'HeaderModal',
 };
 </script>
 

@@ -1,104 +1,104 @@
 <template>
   <div>
-  <div class="add-modal">
-    <h3 class="add-modal__header">Add new car</h3>
-    <div class="add-modal__form">
-      <AppInput
-        :errors="$v.form.title"
-        :isInvalid="$v.form.title.$error"
-        label="Title"
-        @blur="$v.form.title.$touch()"
-        errorMessage="Title is required"
-        errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
-        placeholder="Title"
-        required
-        type="text"
-        v-model="form.title"
-      />
-      <AppInput
-        :errors="$v.form.price"
-        :isInvalid="$v.form.price.$error"
-        label="Price"
-        @blur="$v.form.price.$touch()"
-        errorMessage="Price is required"
-        errorTypeMessage="The field must contain numbers"
-        placeholder="Price"
-        required
-        type="text"
-        v-model="form.price"
-      />
-      <AppInput
-        :errors="$v.form.imageUrl"
-        :isInvalid="$v.form.imageUrl.$error"
-        label="Image Url"
-        @blur="$v.form.imageUrl.$touch()"
-        errorMessage="Image Url is required"
-        errorTypeMessage="The field must contain url"
-        placeholder="Image Url"
-        type="text"
-        v-model="form.imageUrl"
-      />
-      <div class="add-modal__form--fields">
+    <div class="add-modal">
+      <h3 class="add-modal__header">Add new car</h3>
+      <div class="add-modal__form">
         <AppInput
-          :errors="$v.form.persons"
-          :isInvalid="$v.form.persons.$error"
-          label="Persons"
-          @blur="$v.form.persons.$touch()"
-          errorMessage="Persons is required"
-          errorTypeMessage="The field must contain numbers"
-          placeholder="Persons"
-          required
-          type="text"
-          v-model="form.persons"
-        />
-        <AppInput
-          :errors="$v.form.doors"
-          :isInvalid="$v.form.doors.$error"
-          label="Doors"
-          @blur="$v.form.doors.$touch()"
-          errorMessage="Doors is required"
-          errorTypeMessage="The field must contain numbers beetwen 2 and 8"
-          placeholder="Doors"
-          required
-          type="text"
-          v-model="form.doors"
-        />
-        <AppInput
-          :errors="$v.form.litres"
-          :isInvalid="$v.form.litres.$error"
-          label="Litres per 100 km"
-          @blur="$v.form.litres.$touch()"
-          errorMessage="Litres per 100 km is required"
-          errorTypeMessage="The field must contain numbers"
-          placeholder="Litres per 100 km"
-          required
-          type="text"
-          v-model="form.litres"
-        />
-      </div>
-      <AppInput
-          :errors="$v.form.description"
-          :isInvalid="$v.form.description.$error"
-          label="Description"
-          @blur="$v.form.description.$touch()"
-          errorMessage="Description is required"
+          :errors="$v.form.title"
+          :isInvalid="$v.form.title.$error"
+          label="Title"
+          @blur="$v.form.title.$touch()"
+          errorMessage="Title is required"
           errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
-          placeholder="Description"
-          type="textarea"
-          v-model="form.description"
+          placeholder="Title"
+          required
+          type="text"
+          v-model="form.title"
         />
-    </div>
+        <AppInput
+          :errors="$v.form.price"
+          :isInvalid="$v.form.price.$error"
+          label="Price"
+          @blur="$v.form.price.$touch()"
+          errorMessage="Price is required"
+          errorTypeMessage="The field must contain numbers"
+          placeholder="Price"
+          required
+          type="text"
+          v-model="form.price"
+        />
+        <AppInput
+          :errors="$v.form.imageUrl"
+          :isInvalid="$v.form.imageUrl.$error"
+          label="Image Url"
+          @blur="$v.form.imageUrl.$touch()"
+          errorMessage="Image Url is required"
+          errorTypeMessage="The field must contain url"
+          placeholder="Image Url"
+          type="text"
+          v-model="form.imageUrl"
+        />
+        <div class="add-modal__form--fields">
+          <AppInput
+            :errors="$v.form.persons"
+            :isInvalid="$v.form.persons.$error"
+            label="Persons"
+            @blur="$v.form.persons.$touch()"
+            errorMessage="Persons is required"
+            errorTypeMessage="The field must contain numbers"
+            placeholder="Persons"
+            required
+            type="text"
+            v-model="form.persons"
+          />
+          <AppInput
+            :errors="$v.form.doors"
+            :isInvalid="$v.form.doors.$error"
+            label="Doors"
+            @blur="$v.form.doors.$touch()"
+            errorMessage="Doors is required"
+            errorTypeMessage="The field must contain numbers beetwen 2 and 8"
+            placeholder="Doors"
+            required
+            type="text"
+            v-model="form.doors"
+          />
+          <AppInput
+            :errors="$v.form.litres"
+            :isInvalid="$v.form.litres.$error"
+            label="Litres per 100 km"
+            @blur="$v.form.litres.$touch()"
+            errorMessage="Litres per 100 km is required"
+            errorTypeMessage="The field must contain numbers"
+            placeholder="Litres per 100 km"
+            required
+            type="text"
+            v-model="form.litres"
+          />
+        </div>
+        <AppInput
+            :errors="$v.form.description"
+            :isInvalid="$v.form.description.$error"
+            label="Description"
+            @blur="$v.form.description.$touch()"
+            errorMessage="Description is required"
+            errorTypeMessage="The field must contain only alphabetic characters, spaces, and hyphens"
+            placeholder="Description"
+            type="textarea"
+            v-model="form.description"
+          />
+      </div>
 
-    <div class="add-modal__buttons">
-      <button class="button__primary" @click="close">
-        Cancel
-      </button>
-      <button class="button__secondary" @click="additem">
-        Submit
-      </button>
+      <div class="add-modal__buttons">
+        <button class="button__primary" @click="close">
+          Cancel
+        </button>
+        <button class="button__secondary" @click="additem">
+          Submit
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="add-modal_background" @click="close"></div>
+    <div class="add-modal_background" @click="close"></div>
   </div>
 </template>
 
@@ -165,14 +165,13 @@ export default {
     additem() {
       this.$v.form.$touch()
 
-      if (this.$v.form.$invalid) {
-        return;
-      }
+      if (this.$v.form.$invalid) { return; }
 
-      this.$emit("add-item", this.form);
+      this.$emit('add-item', this.form);
     },
+
     close() {
-      this.$emit("close-item");
+      this.$emit('close-item');
     }
   }
 };

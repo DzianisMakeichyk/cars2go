@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "SearchModal",
+  name: 'SearchModal',
 
   data: () => ({
     value: '',
@@ -32,9 +32,8 @@ export default {
   methods: {
     submitSearch() {
       const { value, items } = this;
-      let searchItems = [];
-
       const searchValue = value.toLowerCase();
+      let searchItems = [];
 
       searchItems = items
         .filter(item => items.length > 0 ? item.title.toLowerCase().includes(searchValue) : item)
@@ -54,9 +53,9 @@ export default {
   }
 
   .search__input {
-      width: 100%;
-      margin-right: 35px;
-      position: relative;
+    width: 100%;
+    margin-right: 35px;
+    position: relative;
 
     input {
       font-weight: 15px;

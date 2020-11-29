@@ -13,12 +13,12 @@
     >
     </table-modal>
 
-  <transition name="fade">
-    <add-modal
-      v-if="isAddModalActive"
-      @add-item="onAdditem"
-      @close-item="onClose"
-    ></add-modal>
+    <transition name="fade">
+      <add-modal
+        v-if="isAddModalActive"
+        @add-item="onAdditem"
+        @close-item="onClose"
+      ></add-modal>
     </transition>
   </div>
 </template>
@@ -37,17 +37,18 @@ export default {
     HeaderModal,
     AddModal,
   },
-  data() {
-    return {
-      items: [],
-      isAddModalActive: false
-    };
-  },
+
+  data: () => ({
+    items: [],
+    isAddModalActive: false
+  }),
+
   mounted() {
     if (localStorage.getItem("items")) {
       this.items = JSON.parse(localStorage.getItem("items"));
     }
   },
+
   methods: {
     handleModalActive(state) {
       this.isAddModalActive = state;
@@ -83,15 +84,15 @@ export default {
     },
 
     deleteitem(item) {
-       const index = this.items.indexOf(item);
-        this.items.splice(index, 1);
+      const index = this.items.indexOf(item);
+      this.items.splice(index, 1);
 
-        this.saveLocalStorageitems();
+      this.saveLocalStorageitems();
     },
 
     saveLocalStorageitems() {
-      localStorage.setItem("items", JSON.stringify(this.items));
-      this.items = JSON.parse(localStorage.getItem("items"));
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.items = JSON.parse(localStorage.getItem('items'));
     }
   }
 }

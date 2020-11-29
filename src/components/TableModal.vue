@@ -48,9 +48,7 @@
                   </div>
                 </div>
               </div>
-
             </div>
-
           </div>
         </li>
       </template>
@@ -61,7 +59,7 @@
 <script>
 
 export default {
-  name: "TableModal",
+  name: 'TableModal',
   props: {
     items: {
       type: Array,
@@ -206,13 +204,8 @@ export default {
     }
   }
 
-  .item-toolbar {
-
-  }
-
   .item-toolbar__price {
     font-size: 44px;
-    color: $color-grey-text;
     color: $color-green-price;
     font-weight: 500;
 
