@@ -187,12 +187,15 @@ export default {
   }
 
   .item-description__offer {
+    width: 100%;
+
     @media (max-width: $breakpoint-phone) {
       padding: 0 0 30px 0;
     }
 
     @media (min-width: $breakpoint-phone + 1) {
       padding: 0 30px 0 0;
+      min-height: 120px;
       border-right: 1px solid $silverChalice;
     }
   }

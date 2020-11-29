@@ -134,10 +134,6 @@ export default {
 
   }
 
-  .app-input__label {}
-
-  .app-input__inner--textarea {}
-
   .app-input__errors {
     position: absolute;
     left: 5px;
@@ -146,5 +142,4 @@ export default {
     color: red;
     white-space: nowrap;
   }
-
 </style>

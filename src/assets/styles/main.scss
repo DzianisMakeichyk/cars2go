@@ -7,6 +7,10 @@ html {
   font-family: $font-body;
 }
 
+body {
+  position: relative;
+}
+
 ol,
 ul {
   list-style: none;
@@ -51,4 +55,11 @@ h3 {
     background: #fff;
     color: $ebonyClay;
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }

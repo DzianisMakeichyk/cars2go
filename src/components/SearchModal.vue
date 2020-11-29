@@ -34,7 +34,7 @@ export default {
       const { value, items } = this;
       let searchItems = [];
 
-      const searchValue = this.value.toLowerCase();
+      const searchValue = value.toLowerCase();
 
       searchItems = items
         .filter(item => items.length > 0 ? item.title.toLowerCase().includes(searchValue) : item)

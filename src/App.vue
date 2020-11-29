@@ -13,11 +13,13 @@
     >
     </table-modal>
 
+  <transition name="fade">
     <add-modal
       v-if="isAddModalActive"
       @add-item="onAdditem"
       @close-item="onClose"
     ></add-modal>
+    </transition>
   </div>
 </template>
 

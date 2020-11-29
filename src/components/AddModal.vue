@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="add-modal">
     <h3 class="add-modal__header">Add new car</h3>
     <div class="add-modal__form">
@@ -97,6 +98,8 @@
       </button>
     </div>
   </div>
+  <div class="add-modal_background" @click="close"></div>
+  </div>
 </template>
 
 <script>
@@ -166,9 +169,6 @@ export default {
         return;
       }
 
-      // const payload = { title: this.title };
-
-
       this.$emit("add-item", this.form);
     },
     close() {
@@ -183,28 +183,44 @@ export default {
     border-radius: 10px;
     background: #fff;
     position: absolute;
-    position: absolute;
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 80%;
     margin: 0 auto;
+    z-index: 1;
   }
 
-  .add-modal__header {
-    padding: 40px 30px;
+  .add-modal_background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: black;
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
   }
 
   .add-modal__form {
     padding: 40px 30px 0px 30px;
+
+    @media (max-width: $breakpoint-phone) {
+      padding: 23px 15px 0 15px;
+    };
   }
 
   .add-modal__header {
+    padding: 40px 30px;
     font-size: 26px;
     color: $ebonyClay;
     border-bottom: 1px solid $silverChalice;
     line-height: 1;
+
+    @media (max-width: $breakpoint-phone) {
+      padding: 23px 15px;
+      font-size: 21px;
+    }
   }
 
   .add-modal__form {
@@ -239,5 +255,9 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0 30px 30px 30px;
+
+    @media (max-width: $breakpoint-phone) {
+      padding: 0 15px 15px 15px;
+    };
   }
 </style>
